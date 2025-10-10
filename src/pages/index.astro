@@ -4,7 +4,53 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
+<style>
+  /* Page-specific styles for index.astro */
 
+  .centered-heading {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .image-wrapper {
+    max-width: 800px; /* Keep your desired image width */
+    width: 90%;      /* Keep it responsive up to max-width */
+    margin: 0 auto;  /* Keep centering the image block */
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
+  /* --- MODIFIED FOR WIDER TEXT LAYOUT --- */
+  .content-section {
+    /* Remove max-width and margin: auto to let it spread */
+    /* max-width: 700px; */
+    /* margin: 3rem auto; */
+
+    width: 90%; /* Take up 90% of parent width, or you can remove this too */
+    margin: 3rem auto; /* Keep this to center the wider block, if you use 'width' */
+    padding: 0 1rem;   /* Add some internal padding to prevent text from touching edges */
+    line-height: 1.6;
+    text-align: left; /* Keep text left-aligned for readability */
+  }
+
+  /* Optional: Basic spacing for paragraphs and lists within the content section */
+  .content-section p {
+      margin-bottom: 1em;
+  }
+  .content-section ul {
+      margin-left: 20px;
+  }
+</style>
 
 
 <!doctype html>
