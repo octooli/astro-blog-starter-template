@@ -1,81 +1,108 @@
 ---
+// --- FRONTMATTER START ---
+// 1. Import the Layout component that wraps your page
 import Layout from '../layouts/BlogPost.astro';
-// You might not even need to import Header directly in about.astro
-// if the layout handles it.
+
+// 2. Import SITE_TITLE and SITE_DESCRIPTION from your constants file
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+// You don't need to import BaseHead, Header, Footer here if the Layout handles them.
+// If your Layout component takes a `title` and `description` prop,
+// then these imports are only for defining the prop values.
+// --- FRONTMATTER END ---
 ---
 
-<Layout title="About Us" description={SITE_DESCRIPTION}>
-  <!-- All content for your about page goes here -->
+<!-- 3. Use the Layout component to wrap your page's content -->
+<Layout>
   <main>
-    <h1>About LUMO!</h1>
-    <p>This is the content of the about page.</p>
-    <!-- ... other content ... -->
+    <h1 class="centered-heading">About LUMO!</h1>
+    <p>This is the content of the about page. It tells visitors what LUMO is all about and what services you offer.</p>
+    <p>We are dedicated to creating amazing experiences with our professional lighting and AV setups.</p>
+
+    <!-- Your four boxes section for the about page -->
+    <section class="four-boxes-container">
+      <div class="box">
+        <img src="/IMG_1955.jpeg" alt="Event Lighting 1">
+        <p>Dynamic Lighting Setup for events.</p>
+      </div>
+      <div class="box">
+        <img src="/blog-placeholder-1.jpg" alt="Stage Setup">
+        <p>Professional stage and audio visual services.</p>
+      </div>
+      <div class="box">
+        <img src="/blog-placeholder-2.jpg" alt="DJ Booth">
+        <p>Custom DJ booth designs and rentals.</p>
+      </div>
+      <div class="box">
+        <img src="/blog-placeholder-3.jpg" alt="Party Atmosphere">
+        <p>Creating unforgettable party atmospheres.</p>
+      </div>
+    </section>
   </main>
 </Layout>
----
 
+<!-- 4. Page-specific <style> block goes here -->
 <style>
-  /* ... (your existing styles for .centered-heading, .image-wrapper, .content-section) ... */
+  /* Styles for the heading specific to this about page */
+  .centered-heading {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
+  /* Styles for the four boxes container specific to this about page */
   .four-boxes-container {
-    display: grid; /* Enables CSS Grid layout */
-    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns, each taking equal fraction of space */
-    gap: 20px; /* Space between grid items (boxes) */
-    max-width: 900px; /* Max width for the whole 2x2 grid, adjust as needed */
-    margin: 4rem auto; /* Centers the entire grid container horizontally */
-    padding: 1rem; /* Padding inside the container */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px; /* Adjust as needed for about page */
+    margin: 4rem auto;
+    padding: 1rem;
   }
 
   .box {
-    background-color: #fff; /* White background for each box */
-    border: 1px solid #eee; /* Light gray border */
-    border-radius: 8px; /* Rounded corners for the boxes */
-    padding: 1.5rem; /* Padding inside each box */
-    text-align: center; /* Centers image and text horizontally within each box */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Subtle shadow for depth */
-    display: flex; /* Use flexbox to vertically align content if desired */
-    flex-direction: column; /* Stack image and text vertically */
-    justify-content: space-between; /* Pushes content to top/bottom */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .box img {
-    max-width: 100%; /* Ensures image doesn't overflow its box */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 4px; /* Slightly rounded corners for images */
-    margin-bottom: 1rem; /* Space between image and text */
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
   }
 
   .box p {
     font-size: 1rem;
     color: #333;
-    margin: 0; /* Remove default paragraph margin */
+    margin: 0;
   }
 
   /* Responsive adjustment for smaller screens: stack boxes vertically */
   @media (max-width: 768px) {
     .four-boxes-container {
-      grid-template-columns: 1fr; /* On small screens, make it a single column */
-      max-width: 500px; /* Adjust max-width for single column */
+      grid-template-columns: 1fr;
+      max-width: 500px;
     }
   }
-</style>
 
-<section class="four-boxes-container">
-  <div class="box">
-    <img src="/public/IMG_1955.jpeg" alt="Event Lighting 1">
-    <p>Dynamic Lighting Setup for events.</p>
-  </div>
-  <div class="box">
-    <img src="/public/blog-placeholder-1.jpg" alt="Stage Setup">
-    <p>Professional stage and audio visual services.</p>
-  </div>
-  <div class="box">
-    <img src="/public/blog-placeholder-2.jpg" alt="DJ Booth">
-    <p>Custom DJ booth designs and rentals.</p>
-  </div>
-  <div class="box">
-    <img src="/public/blog-placeholder-3.jpg" alt="Party Atmosphere">
-    <p>Creating unforgettable party atmospheres.</p>
-  </div>
-</section>
+  /* Optional: Adjust the main content area for this page if it's still too narrow */
+  main {
+    max-width: 1000px; /* Example: make the main content area wider */
+    margin: 0 auto; /* Center the main content area */
+    padding: 2rem 1rem; /* Add some padding around the main content */
+  }
+
+  main p {
+      line-height: 1.6;
+      margin-bottom: 1em;
+      text-align: left; /* Ensure paragraphs are left-aligned */
+  }
+</style>
