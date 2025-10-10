@@ -5,12 +5,24 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<style>
-  .my-flexible-image {
-    max-width: 100%; /* Ensures image doesn't overflow its container */
-    height: auto;    /* Maintains aspect ratio */
-  }
-</style>
+  <style>
+    /* Style for the container div */
+    .image-container {
+      width: 70%; /* Or a specific pixel value like 700px */
+      max-width: 900px; /* Optional: set a maximum width */
+      margin: 2rem auto; /* Centers the container and adds vertical spacing */
+      padding: 1rem; /* Add some internal padding if needed */
+      border: 1px solid #eee; /* Optional: for visualization */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: a subtle shadow */
+    }
+
+    /* Ensure the image inside scales to fit its container */
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block; /* Removes extra space below image */
+    }
+  </style>
 
 <!doctype html>
 <html lang="en">
@@ -22,8 +34,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			 <h1 style="text-align: center;">Welcome To LUMO!</h1>
 
-<img src="/IMG_1955.jpeg" class="my-flexible-image"/>
-</Markdown>
+
+    <div class="image-container">
+      <img src="/IMG_1955.jpeg" alt="LUMO lights" />
+    </div>
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
