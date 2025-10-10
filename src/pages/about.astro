@@ -1,9 +1,18 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+// You might not even need to import Header directly in about.astro
+// if the layout handles it.
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<Layout title="About Us" description={SITE_DESCRIPTION}>
+  <!-- All content for your about page goes here -->
+  <main>
+    <h1>About LUMO!</h1>
+    <p>This is the content of the about page.</p>
+    <!-- ... other content ... -->
+  </main>
+</Layout>
 ---
 
 <style>
