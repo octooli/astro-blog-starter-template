@@ -5,6 +5,13 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
+<style>
+  .my-flexible-image {
+    max-width: 100%; /* Ensures image doesn't overflow its container */
+    height: auto;    /* Maintains aspect ratio */
+  }
+</style>
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -13,9 +20,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Welcome To LUMO!</h1> 
+			 <h1 style="text-align: center;">Welcome To LUMO!</h1>
 
-<img src="/IMG_1955.jpeg" />
+<img src="/IMG_1955.jpeg" class="my-flexible-image"/>
 </Markdown>
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
