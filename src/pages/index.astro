@@ -31,14 +31,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   }
 
   /* --- MODIFIED FOR WIDER TEXT LAYOUT --- */
+ /* --- MODIFIED FOR WIDER TEXT LAYOUT --- */
   .content-section {
-    /* Remove max-width and margin: auto to let it spread */
-    /* max-width: 700px; */
-    /* margin: 3rem auto; */
+    /* We need to counteract any parent's max-width or margin: auto */
+    width: 100%; /* Make it fill its parent */
+    /* If the parent (`<main>`) has a max-width, this will still be limited.
+       To break out, we need to apply more specific or viewport-based widths. */
 
-    width: 90%; /* Take up 90% of parent width, or you can remove this too */
-    margin: 3rem auto; /* Keep this to center the wider block, if you use 'width' */
-    padding: 0 1rem;   /* Add some internal padding to prevent text from touching edges */
+    /* Try this for a good wide, but not edge-to-edge, layout: */
+    max-width: 1200px; /* Make it wider than default content, adjust as needed */
+    margin: 3rem auto; /* Center this wider block */
+    padding: 0 2rem;   /* Ensure there's padding from the screen edges */
+
     line-height: 1.6;
     text-align: left; /* Keep text left-aligned for readability */
   }
