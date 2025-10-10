@@ -5,43 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<style>
-  /* These styles will primarily apply to this page (index.astro) */
 
-  /* Style for the main heading */
-  .centered-heading {
-    text-align: center; /* Centers the "Welcome To LUMO!" text */
-    margin-top: 2rem;   /* Adds some space above the heading */
-    margin-bottom: 2rem; /* Adds space below the heading */
-  }
-
-  /* Styles for the image wrapper */
-  .image-wrapper {
-    max-width: 800px; /* Adjust this value to your desired max width */
-    width: 90%;      /* Make it responsive up to the max-width */
-    margin: 0 auto;  /* Centers the wrapper horizontally */
-    padding: 1rem; /* Optional: Add some internal padding */
-    background-color: #fff; /* Optional: white background for the wrapper */
-    border-radius: 8px; /* Optional: rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: a subtle shadow */
-  }
-
-  /* Styles for the image inside the wrapper */
-  .image-wrapper img {
-    width: 100%; /* Image fills the wrapper */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Removes any extra space below the image */
-    border-radius: 4px; /* Slightly rounded corners for the image */
-  }
-
-  /* Optional: Styles for the general content section to control its width */
-  .content-section {
-    max-width: 700px; /* Set a comfortable reading width for your text */
-    margin: 3rem auto; /* Center the text content and add vertical spacing */
-    padding: 0 1rem; /* Add horizontal padding for smaller screens */
-    line-height: 1.6; /* Improve readability */
-  }
-</style>
 
 <!doctype html>
 <html lang="en">
