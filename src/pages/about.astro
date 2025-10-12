@@ -95,10 +95,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
   /* Optional: Adjust the main content area for this page if it's still too narrow */
   main {
-    max-width: 1000px; /* Example: make the main content area wider */
-    margin: 0 auto; /* Center the main content area */
-    padding: 2rem 1rem; /* Add some padding around the main content */
-  }
+    calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
 
   main p {
       line-height: 1.6;
